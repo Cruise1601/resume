@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tony Muriungi — IT & Network Professional</title>
+    <meta name="description" content="Tony Muriungi — IT student and networking professional with hands-on ISP experience in network operations, support, and infrastructure.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root{--mint:#9be8c3;--cream:#effaf4;--muted:#9aaba4;--ink:#07110f}
+      html,body{height:100%;margin:0;font-family:'DM Sans',system-ui,Segoe UI,Roboto,Helvetica,Arial}
+      body{background:var(--ink);color:var(--cream);-webkit-font-smoothing:antialiased}
+      .container{max-width:1100px;margin:0 auto;padding:32px}
+      .mono{font-family:'Space Mono',monospace}
+      a{color:inherit}
+      .card{background:rgba(14,29,26,.7);border:1px solid rgba(155,232,195,.12);padding:18px;border-radius:8px}
+
+      /* Semantic layout classes */
+      .site-header{display:flex;align-items:center;justify-content:space-between}
+      .brand{display:flex;align-items:center;gap:12px}
+      .brand-mark{width:48px;height:48px;border-radius:9999px;border:1px solid rgba(155,232,195,.45);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--mint)}
+      .primary-nav{display:flex;gap:24px;font-size:14px}
+      .hero{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+      .hero-title{font-size:40px;line-height:1.05;margin-top:10px}
+      .lead{color:var(--muted);margin-top:14px;line-height:1.6}
+      .role{font-size:14px}
+      .caption{font-size:12px;margin-top:8px;letter-spacing:.12em}
+      .cta-group{margin-top:24px;display:flex;gap:12px}
+      .btn{display:inline-block;padding:12px 18px;border-radius:6px;text-decoration:none}
+      .btn-primary{background:var(--mint);color:#07110f;font-weight:600}
+      .btn-secondary{background:transparent;border:1px solid rgba(155,232,195,.12)}
+      .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+
+      .section{margin-top:48px}
+      .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+      .two-up{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+      .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+      .card img{width:100%;height:200px;object-fit:cover;border-radius:6px;opacity:.95}
+
+      .muted{color:var(--muted)}
+      .highlight{color:var(--mint)}
+
+      @media (max-width:800px){
+        .primary-nav{display:none}
+        .hero{grid-template-columns:1fr}
+        .two-col,.two-up{grid-template-columns:1fr}
+        .skills-grid{grid-template-columns:repeat(2,1fr)}
+        .stats{grid-template-columns:repeat(2,1fr)}
+      }
+    </style>
+    
+  </head>
+  <body>
+    <header class="container site-header">
+      <div class="brand">
+        <div class="brand-mark mono">TM</div>
+        <div>
+          <div style="font-weight:600">Tony Muriungi</div>
+          <div class="mono text-xs" style="color:var(--mint);letter-spacing:.12em">NETWORKING & IT</div>
+        </div>
+      </div>
+      <nav class="primary-nav" aria-label="primary">
+        <a href="#work" class="mono nav-link">Work</a>
+        <a href="#skills" class="mono nav-link">Skills</a>
+        <a href="#contact" class="mono nav-link">Contact</a>
+      </nav>
+    </header>
+
+    <main class="container hero">
+      <section>
+        <p class="role mono highlight">IT Student • Networking Professional</p>
+        <h1 class="hero-title">Building and operating resilient networks for people and businesses</h1>
+        <p class="lead">I combine formal training in Information Technology with hands-on experience at an ISP. I design, troubleshoot, and maintain network infrastructure—prioritizing uptime, clear documentation, and customer-centric support. My daily work spans routing & switching, field installs, monitoring, and technical escalation.</p>
+
+        <div class="cta-group">
+          <a href="#contact" class="btn btn-primary">Get in touch</a>
+          <a href="#work" class="btn btn-secondary">Explore projects</a>
+        </div>
+
+        <ul class="stats">
+          <li class="mono highlight">ISP Environment</li>
+          <li class="mono highlight">Core Skills</li>
+          <li class="mono highlight">Customer Support</li>
+        </ul>
+      </section>
+
+      <aside>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/5073493/pexels-photo-5073493.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Server patch panel and cabling">
+          <div class="caption mono highlight">NETWORKS · INFRASTRUCTURE · CONNECTIVITY</div>
+          <h3 style="margin-top:8px">Profile</h3>
+          <p class="muted" style="line-height:1.5">Hands-on ISP experience supporting network operations and customer-facing technical support. Skilled at troubleshooting, documentation, and applying network fundamentals in high-pressure environments.</p>
+        </div>
+      </aside>
+    </main>
+
+    <section id="work" class="section container">
+      <h2 style="font-size:22px">Selected Experience</h2>
+      <div class="two-up">
+        <div class="card">
+          <div class="caption mono highlight">PRESENT • CURRENT ROLE</div>
+          <h3 style="margin-top:6px">Networking & IT Support — Jirani Connect</h3>
+          <p class="muted" style="margin-top:8px;line-height:1.5">Contributed to operational support within a busy ISP: performed field installs, responded to outages, assisted with capacity checks and basic routing tasks, and supported customers across technical and billing touchpoints. Regularly updated runbooks and assisted with inventory and patching schedules.</p>
+        </div>
+
+        <div class="card">
+          <div class="caption mono highlight">ONGOING • EDUCATION</div>
+          <h3 style="margin-top:6px">Information Technology Student</h3>
+          <p class="muted" style="margin-top:8px;line-height:1.5">Continuing formal studies in IT with focused learning on networking, systems administration, and security fundamentals. Applying coursework directly to real-world ISP tasks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2 style="font-size:22px">Core Skills</h2>
+      <div class="skills-grid">
+        <div class="card">
+          <strong>Network Fundamentals</strong>
+          <div class="mono muted" style="margin-top:6px">IPv4/IPv6, subnetting, routing basics, switching</div>
+        </div>
+        <div class="card">
+          <strong>Systems & Devices</strong>
+          <div class="mono muted" style="margin-top:6px">Routers, switches, CPE, basic Linux administration</div>
+        </div>
+        <div class="card">
+          <strong>Troubleshooting</strong>
+          <div class="mono muted" style="margin-top:6px">Packet-level thinking, diagnostics, escalation handling</div>
+        </div>
+        <div class="card">
+          <strong>IT Support</strong>
+          <div class="mono muted" style="margin-top:6px">Customer support, documentation, SOPs</div>
+        </div>
+        <div class="card">
+          <strong>ISP Operations</strong>
+          <div class="mono muted" style="margin-top:6px">Field installs, service activation, monitoring</div>
+        </div>
+        <div class="card">
+          <strong>Communication</strong>
+          <div class="mono muted" style="margin-top:6px">Clear technical explanations for non-technical customers</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <div class="card">
+        <h2>Contact</h2>
+        <p class="muted" style="margin-top:8px">Interested in collaborations, entry-level network roles, or mentorship opportunities? Reach out.</p>
+        <div class="two-col" style="margin-top:16px">
+          <div>
+            <div class="mono caption highlight">Email</div>
+            <a href="mailto:tonnykithinji16@gmail.com" style="color:var(--cream);font-weight:600">tonnykithinji16@gmail.com</a>
+          </div>
+          <div>
+            <div class="mono caption highlight">Phone</div>
+            <div style="color:var(--cream);font-weight:600">+254 726 959 766</div>
+          </div>
+        </div>
+        <div class="cta-group" style="margin-top:16px">
+          <a class="card" href="https://wa.me/254726959766" target="_blank" rel="noopener">Message on WhatsApp</a>
+          <a class="card" href="mailto:tonnykithinji16@gmail.com" target="_blank" rel="noopener">Start a conversation</a>
+        </div>
+        <div class="caption mono" style="margin-top:16px;color:var(--muted)">Links: <a href="https://www.linkedin.com/" target="_blank" rel="noopener" style="color:var(--mint)">LinkedIn</a> • <a href="https://github.com/" target="_blank" rel="noopener" style="color:var(--mint)">GitHub</a></div>
+      </div>
+    </section>
+
+    <footer class="container" style="margin-top:48px;padding-bottom:32px;color:var(--muted);font-size:13px">© 2026 Tony Muriungi — IT Student & Networking Professional</footer>
+  </body>
+</html>
