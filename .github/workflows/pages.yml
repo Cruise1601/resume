@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir -p site
           cp index.html site/
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
       - uses: actions/deploy-pages@v1
