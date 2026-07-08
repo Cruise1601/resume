@@ -47,6 +47,15 @@
       .contact-cta{display:inline-flex;gap:10px;margin-top:14px}
       .contact-cta .card{padding:10px 14px;border-radius:6px}
 
+      /* Modal */
+      .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:60}
+      .modal{background:var(--ink);border:1px solid rgba(155,232,195,.12);padding:20px;border-radius:10px;max-width:520px;width:92%;color:var(--cream)}
+      .modal h3{margin:0 0 8px 0}
+      .modal .modal-body{color:var(--muted);line-height:1.5}
+      .modal .modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+      .modal .btn{padding:8px 12px}
+      .close-btn{background:transparent;border:0;color:var(--muted);font-size:18px}
+
       .muted{color:var(--muted)}
       .highlight{color:var(--mint)}
 
@@ -93,7 +102,7 @@
           <p class="muted" style="margin-top:8px">Interested in collaborations, entry-level network roles, or mentorship opportunities? Reach out.</p>
 
           <div class="contact-list">
-            <a class="contact-item" href="mailto:tonnykithinji16@gmail.com">
+            <a class="contact-item" href="#" data-type="email" data-href="mailto:tonnykithinji16@gmail.com">
               <span class="icon" aria-hidden>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                   <path d="M3 7.5C3 6.67157 3.67157 6 4.5 6H19.5C20.3284 6 21 6.67157 21 7.5V16.5C21 17.3284 20.3284 18 19.5 18H4.5C3.67157 18 3 17.3284 3 16.5V7.5Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -106,7 +115,7 @@
               </div>
             </a>
 
-            <a class="contact-item" href="tel:+254726959766">
+            <a class="contact-item" href="#" data-type="phone" data-href="tel:+254726959766">
               <span class="icon" aria-hidden>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                   <path d="M22 16.92V21a1 1 0 0 1-1.11 1A19 19 0 0 1 3 4.11 1 1 0 0 1 4 3h4.09a1 1 0 0 1 1 .75c.12.66.35 1.3.68 1.9a1 1 0 0 1-.24 1.05L8.7 8.7a16 16 0 0 0 6.6 6.6l1-1a1 1 0 0 1 1.05-.24c.6.33 1.24.56 1.9.68a1 1 0 0 1 .75 1V16.92z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -118,7 +127,7 @@
               </div>
             </a>
 
-            <a class="contact-item" href="https://wa.me/254726959766" target="_blank" rel="noopener">
+            <a class="contact-item" href="#" data-type="whatsapp" data-href="https://wa.me/254726959766" target="_blank" rel="noopener">
               <span class="icon" style="background:#25D366;color:#042014" aria-hidden>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                   <path d="M20.5 3.5C18.5 1.5 15.9.5 13.1.5 6 0.5 1 6.5 1 13.6c0 2.4.6 4.6 1.7 6.6L1 23l2.9-1.5c1.9 1 4.1 1.6 6.5 1.6 7.1 0 13.1-5 13.1-12.1 0-2.8-1-5.4-3-7.1z" stroke="currentColor" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -135,6 +144,19 @@
           <div class="caption mono highlight">PRESENT • CURRENT ROLE</div>
           <h3 style="margin-top:6px">Networking & IT Support — Jirani Connect</h3>
           <p class="muted" style="margin-top:8px;line-height:1.5">Providing technical support across a live ISP environment with a focus on service resilience, field installations, outage resolution, and customer-facing incident handling. I maintain operational documentation, support patching and inventory workflows, and help standardize network procedures.</p>
+        </div>
+
+        <!-- Modal (hidden by default) -->
+        <div id="contact-modal-backdrop" class="modal-backdrop" style="display:none" aria-hidden="true">
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="close-btn" id="modal-close" aria-label="Close">✕</button>
+            <h3 id="modal-title">Contact</h3>
+            <div class="modal-body" id="modal-body">Choose how you'd like to reach out.</div>
+            <div class="modal-actions">
+              <a id="modal-action" class="btn btn-primary" href="#">Proceed</a>
+              <button id="modal-cancel" class="btn btn-secondary">Cancel</button>
+            </div>
+          </div>
         </div>
 
         <div class="card">
@@ -156,6 +178,67 @@
         </div>
       </div>
     </section>
+
+    <script>
+      (function(){
+        const modalBackdrop = document.getElementById('contact-modal-backdrop');
+        const modalBody = document.getElementById('modal-body');
+        const modalTitle = document.getElementById('modal-title');
+        const modalAction = document.getElementById('modal-action');
+        const modalClose = document.getElementById('modal-close');
+        const modalCancel = document.getElementById('modal-cancel');
+
+        function openModal(type, href){
+          if(type === 'email'){
+            modalTitle.textContent = 'Send an email';
+            modalBody.textContent = 'Open your email client to send a message to tonnykithinji16@gmail.com.';
+            modalAction.textContent = 'Open email';
+            modalAction.href = href;
+          } else if(type === 'phone'){
+            modalTitle.textContent = 'Call or SMS';
+            modalBody.textContent = 'Use your phone to call or SMS +254 726 959 766.';
+            modalAction.textContent = 'Call / SMS';
+            modalAction.href = href;
+          } else if(type === 'whatsapp'){
+            modalTitle.textContent = 'WhatsApp chat';
+            modalBody.textContent = 'Open WhatsApp to start a chat with +254 726 959 766.';
+            modalAction.textContent = 'Open WhatsApp';
+            modalAction.href = href;
+            modalAction.target = '_blank';
+            modalAction.rel = 'noopener';
+          }
+          modalBackdrop.style.display = 'flex';
+          modalBackdrop.setAttribute('aria-hidden','false');
+        }
+
+        function closeModal(){
+          modalBackdrop.style.display = 'none';
+          modalBackdrop.setAttribute('aria-hidden','true');
+          modalAction.removeAttribute('target');
+          modalAction.removeAttribute('rel');
+        }
+
+        document.querySelectorAll('.contact-item').forEach(el => {
+          el.addEventListener('click', function(e){
+            e.preventDefault();
+            const type = el.dataset.type;
+            const href = el.dataset.href;
+            openModal(type, href);
+          });
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        modalCancel.addEventListener('click', closeModal);
+
+        // close on backdrop click
+        modalBackdrop.addEventListener('click', function(e){
+          if(e.target === modalBackdrop) closeModal();
+        });
+
+        // escape key
+        document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+      })();
+    </script>
 
     <section id="skills" class="section container">
       <h2 style="font-size:22px">Core Skills</h2>
